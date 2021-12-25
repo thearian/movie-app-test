@@ -1,0 +1,15 @@
+# Task List
+- [ ] Users will see a list of movies (20 per page) without any parameters
+- [ ] Users can select release_start_date and release_end_date for a list of movies with a Date Range Picker
+- [ ] Users Can Navigate to the next/prev page if any page is available
+- [ ] Users will see indexes of results below paginations
+- [ ] Users will see these items in each movie card:
+- [ ] Cover image
+- [ ] Title
+- [ ] Release date
+- [ ] Users will redirect to the Movie detail page after clicking on movie cards
+- [ ] Users will see the title and tagline on top of the page with a link to the homepage
+- [ ] Users will see the Poster of the movie with some extra information about the movie
+- [ ] Users will see the First max 10 popular cast members (sorted by popularity) of a movie on the detail page
+- [ ] Designs should be implemented for desktop (No responsive needed)
+- [ ] Source code must be delivered on Github or Gitlab on a public repo(or with access to the repo)
