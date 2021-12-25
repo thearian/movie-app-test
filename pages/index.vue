@@ -1,6 +1,6 @@
 <template>
   <div>
-    init
+    <HomePage />
   </div>
 </template>
 
