@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div v-if="!!moviesData && moviesData.results" class="w-full">
-      <div
-        :v-if="moviesData"
-        v-for="movie in moviesData.results"
-        :key="movie.id"
-        class='w-full flex flex-wrap gap-5'
-      >
-        {{ movie.title }}
+    <div v-if="!!moviesData && moviesData.results" class='w-full'>
+      <div class="grid grid-cols-3 gap-y-10 gap-x-16">
+        <div
+          :v-if="moviesData"
+          v-for="movie in moviesData.results"
+          :key="movie.id"
+        >
+          <MovieItem :movie="movie" />
+        </div>
       </div>
 
       <div v-if="moviesData" class="w-full flex flex-col justify-center items-center my-16">
@@ -39,11 +40,22 @@ export default {
     return { moviesData: null }
   },
   async mounted () {
-    const url = 'discover/movie'
-    console.log('hi')
-    const discoverMovies = await this.$request(url)
+    const discoverMovies = await this.$request('discover/movie')
+    const genres = await this.$request('genre/movie/list')
 
-    console.log(discoverMovies)
+    discoverMovies.results = discoverMovies.results.map((movie) => {
+      return {
+        ...movie,
+        genres: movie.genre_ids.map((movieGenre) => {
+          return genres.genres.filter((genre) => {
+            return genre.id === movieGenre
+          })[0].name
+        })
+      }
+    })
+
+    console.log(discoverMovies.results)
+
     this.moviesData = {
       from: (discoverMovies.page - 1) * 20 + 1,
       to: (discoverMovies.page) * 20,

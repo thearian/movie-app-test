@@ -1,0 +1,35 @@
+<template>
+  <div class="flex border border-2 bg-gray-100 rounded-lg p-1 gap-3">
+    <img :src="movieImage" :alt="movie.title" class="w-40 object-scale-down rounded-l-lg">
+
+    <div class="flex flex-col justify-between text-sm py-3">
+      <h1 class="font-bold text-lg">
+        {{movie.title}}
+      </h1>
+
+      <div class="flex flex-col gap-3 text-gray-500">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="inline h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {{ movie.release_date }}
+        </span>
+        <span>
+          {{ movie.genres.join(" • ") }}
+        </span>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'MovieItem',
+  props: ['movie'],
+  data () {
+    return {
+      movieImage: `https://image.tmdb.org/t/p/original/${this.$props.movie.poster_path}`
+    }
+  }
+}
+</script>
