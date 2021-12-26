@@ -36,14 +36,22 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxt/image'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  image: {
+    provider: 'twicpics',
+    twicpics: {
+      baseURL: 'https://image.tmdb.org/t/p/original/',
+    },
+  },
 }

@@ -1,6 +1,11 @@
 <template>
   <div class="flex border border-2 bg-gray-100 rounded-lg p-1 gap-3">
-    <img :src="movieImage" :alt="movie.title" class="w-40 object-scale-down rounded-l-lg">
+    <nuxt-img
+      provider="twicpics"
+      :src="movie.poster_path"
+      :alt="movie.title"
+      class="w-40 h-60 object-scale-down rounded-l-lg"
+    />
 
     <div class="flex flex-col justify-between text-sm py-3">
       <h1 class="font-bold text-lg">
@@ -25,11 +30,6 @@
 <script>
 export default {
   name: 'MovieItem',
-  props: ['movie'],
-  data () {
-    return {
-      movieImage: `https://image.tmdb.org/t/p/original/${this.$props.movie.poster_path}`
-    }
-  }
+  props: ['movie']
 }
 </script>
