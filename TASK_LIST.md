@@ -1,8 +1,8 @@
 # Task List
 - [X] Users will see a list of movies (20 per page) without any parameters
 - [ ] Users can select release_start_date and release_end_date for a list of movies with a Date Range Picker
-- [ ] Users Can Navigate to the next/prev page if any page is available
-- [ ] Users will see indexes of results below paginations
+- [X] Users Can Navigate to the next/prev page if any page is available
+- [X] Users will see indexes of results below paginations
 - [X] Users will see these items in each movie card:
 - [X] Cover image
 - [X] Title
