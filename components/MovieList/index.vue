@@ -47,7 +47,8 @@ export default {
   data () {
     return {
       moviesData: null,
-      genres: []
+      genres: [],
+      params: {}
     }
   },
   methods: {
@@ -62,9 +63,11 @@ export default {
       const discoverMovies = await this.$request('discover/movie', {
         params: {
           page,
+          ...this.params,
           ...params
         }
       })
+      this.params = params
 
       discoverMovies.results = discoverMovies.results.map((movie) => {
         return {
