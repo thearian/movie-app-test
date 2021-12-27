@@ -8,6 +8,7 @@ async function Request (url, options = {}) {
     ...options.params
   }
   uri.search = new URLSearchParams(params).toString()
+  console.log(params)
 
   return await fetch(uri)
     .then(data => data.json())
