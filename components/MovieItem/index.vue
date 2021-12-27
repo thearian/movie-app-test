@@ -1,5 +1,5 @@
 <template>
-  <div class="flex border border-2 bg-gray-100 rounded-lg p-1 gap-3">
+  <NuxtLink :to="`movie/${movie.id}`" class="flex border border-2 bg-gray-100 rounded-lg p-1 gap-3">
     <nuxt-img
       provider="twicpics"
       :src="movie.poster_path"
@@ -9,7 +9,7 @@
 
     <div class="flex flex-col justify-between text-sm py-3">
       <h1 class="font-bold text-lg">
-        {{movie.title}}
+        {{ movie.title }}
       </h1>
 
       <div class="flex flex-col gap-3 text-gray-500">
@@ -24,7 +24,7 @@
         </span>
       </div>
     </div>
-  </div>
+  </NuxtLink>
 </template>
 
 <script>

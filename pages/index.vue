@@ -1,11 +1,16 @@
 <template>
   <div>
-    <HomePage />
+    <div class='py-20'>
+      <SearchBar />
+    </div>
+
+    <MovieList />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage'
+  name: 'IndexPage',
+  layout: 'MainLayout'
 }
 </script>

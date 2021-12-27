@@ -7,7 +7,7 @@
 - [X] Cover image
 - [X] Title
 - [X] Release date
-- [ ] Users will redirect to the Movie detail page after clicking on movie cards
-- [ ] Users will see the title and tagline on top of the page with a link to the homepage
-- [ ] Users will see the Poster of the movie with some extra information about the movie
-- [ ] Users will see the First max 10 popular cast members (sorted by popularity) of a movie on the detail page
+- [X] Users will redirect to the Movie detail page after clicking on movie cards
+- [X] Users will see the title and tagline on top of the page with a link to the homepage
+- [X] Users will see the Poster of the movie with some extra information about the movie
+- [X] Users will see the First max 10 popular cast members (sorted by popularity) of a movie on the detail page
