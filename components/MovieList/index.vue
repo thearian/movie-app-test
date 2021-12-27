@@ -44,7 +44,6 @@
 <script>
 export default {
   name: 'MovieList',
-  props: ['range'],
   data () {
     return {
       moviesData: null,
@@ -85,14 +84,9 @@ export default {
         hasNext: discoverMovies.page < discoverMovies.total_pages,
         ...discoverMovies
       }
-    }
-  },
-  async mounted () {
-    this.genres = await this.$request('genre/movie/list')
-    await this.getMovies()
-  },
-  watch: {
-    async range (newRange) {
+    },
+    async changeDateRange (newRange) {
+      console.log('asdsad', newRange)
       if (newRange.startDate || newRange.endDate) {
         await this.getMovies(1, {
           'primary_release_date.gte': new Date(newRange.startDate).toISOString().substr(0, 10),
@@ -103,6 +97,11 @@ export default {
         await this.getMovies(page)
       }
     }
+  },
+  async mounted () {
+    this.genres = await this.$request('genre/movie/list')
+    await this.getMovies()
+    this.$root.$on('pick', this.changeDateRange)
   }
 }
 </script>

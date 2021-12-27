@@ -4,29 +4,16 @@
 
     <div class='w-2/3 mx-auto'>
       <div class='py-20'>
-        <SearchBar @pickRange="selectRange" />
+        <SearchBar />
       </div>
 
-      <MovieList :range="selectedRange" />
+      <MovieList />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
-  data () {
-    return {
-      selectedRange: {
-        startDate: null,
-        endDate: null
-      }
-    }
-  },
-  methods: {
-    selectRange (e) {
-      this.selectedRange = e
-    }
-  }
+  name: 'HomePage'
 }
 </script>

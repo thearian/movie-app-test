@@ -15,7 +15,7 @@
         </button>
       </div>
       <button
-        @click="updateDateRange()"
+        @click="emitChange"
         class="bg-blue-400 rounded-full py-1 px-3 text-white"
       >
         Search
@@ -37,8 +37,8 @@ export default {
     }
   },
   methods: {
-    updateDateRange () {
-      this.$emit('pickRange', this.dateRange)
+    emitChange () {
+      this.$root.$emit('pick', this.dateRange)
     },
     emptyRange () {
       this.dateRange = {
