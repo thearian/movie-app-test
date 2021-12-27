@@ -1,4 +1,12 @@
 # movies-app-test
+By Arian Mirahmadi mirarianmir@gmail.com  
+
+## Why This Teck Stack?
+- `typescript` was prevented for the sake of delivery speed
+- and `Composition API` (Vue 3.0)
+- `fetch` was prefered instead of `axios` to reduce production dependencies
+- `nuxt-img` was used to maximize image performance since most of the data of this project is images
+- components can be structured more reliable in price of time
 
 ## Build Setup
 
