@@ -89,7 +89,6 @@ export default {
       }
     },
     async changeDateRange (newRange) {
-      console.log('asdsad', newRange)
       if (newRange.startDate || newRange.endDate) {
         await this.getMovies(1, {
           'primary_release_date.gte': new Date(newRange.startDate).toISOString().substr(0, 10),
