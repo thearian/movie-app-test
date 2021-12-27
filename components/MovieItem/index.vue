@@ -1,6 +1,7 @@
 <template>
   <div class="flex border border-2 bg-gray-100 rounded-lg p-1 gap-3">
     <nuxt-img
+      v-if="movie.poster_path"
       provider="twicpics"
       :src="movie.poster_path"
       :alt="movie.title"

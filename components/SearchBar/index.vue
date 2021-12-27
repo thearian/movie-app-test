@@ -5,10 +5,21 @@
         <date-picker
           v-model="dateRange"
           class="ml-5"
-          @update="updateDateRange"
         ></date-picker>
+        <button
+          v-if="dateRange.startDate || dateRange.endDate"
+          class="bg-white border border-1 border-gray-300 py-1 px-2 ml-3"
+          @click="emptyRange()"
+        >
+          Clear
+        </button>
       </div>
-      <button class="bg-blue-400 rounded-full py-1 px-3 text-white">Search</button>
+      <button
+        @click="updateDateRange()"
+        class="bg-blue-400 rounded-full py-1 px-3 text-white"
+      >
+        Search
+      </button>
     </div>
 </template>
 
@@ -27,7 +38,13 @@ export default {
   },
   methods: {
     updateDateRange () {
-      console.log(this.dateRange)
+      this.$emit('pickRange', this.dateRange)
+    },
+    emptyRange () {
+      this.dateRange = {
+        startDate: null,
+        endDate: null
+      }
     }
   }
 }
