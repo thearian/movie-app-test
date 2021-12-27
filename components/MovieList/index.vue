@@ -35,8 +35,8 @@
       </div>
     </div>
 
-    <div v-if="!moviesData">
-      Loading
+    <div v-if="!moviesData || !moviesData.results" class="w-full flex justify-center items-center">
+      <LoadingIcon />
     </div>
   </div>
 </template>

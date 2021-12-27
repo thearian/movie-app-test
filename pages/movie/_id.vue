@@ -82,6 +82,10 @@
         </div>
       </div>
     </div>
+
+    <div v-if="!movieDetails" class="w-full flex justify-center items-center">
+      <LoadingIcon />
+    </div>
   </div>
 </template>
 
